@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{803F8AAC-E013-4DD3-8FD0-B082AECDA81F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TextMining.Biblioteca</RootNamespace>
+    <AssemblyName>TextMining.Biblioteca</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="agilis_web.biblioteca, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referencias\agilis_web.biblioteca\agilis_web.biblioteca.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telecon.Genericos, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Conexao\Agilis.cs" />
+    <Compile Include="Classes\Logica\Controle.cs" />
+    <Compile Include="Classes\Referencia\JaroWinklerDistance.cs" />
+    <Compile Include="Classes\Conexao\Banco.cs" />
+    <Compile Include="Classes\Persistencia\Resposta.cs" />
+    <Compile Include="Classes\Persistencia\TextMining.cs" />
+    <Compile Include="Classes\Pessoa\Membro.cs" />
+    <Compile Include="Classes\Pessoa\Membro.Telecode.cs" />
+    <Compile Include="Classes\Referencia\StopWord.cs" />
+    <Compile Include="Classes\Referencia\Texto.cs" />
+    <Compile Include="Classes\Util\Componente.cs" />
+    <Compile Include="Classes\Util\Configuracao.cs" />
+    <Compile Include="Classes\Util\Configuracao.Telecode.cs" />
+    <Compile Include="Classes\Util\Tarefa.cs" />
+    <Compile Include="Classes\Util\Tarefa.Telecode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Referencias\agilis_web.biblioteca\agilis_web.biblioteca.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\agilis_web.biblioteca.pdb" />
+    <Content Include="Referencias\agilis_web.biblioteca\FirebirdSql.Data.FirebirdClient.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\Microsoft.Vbe.Interop.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\MySql.Data.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\office.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\Oracle.DataAccess.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\Telecon.Genericos.dll" />
+    <Content Include="Referencias\agilis_web.biblioteca\Telecon.Genericos.pdb" />
+    <Content Include="Referencias\agilis_web.biblioteca\zlib.net.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

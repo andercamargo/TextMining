@@ -1,0 +1,8 @@
+SAMPLE VOCABULARY
+http://snowball.tartarus.org/algorithms/portuguese/voc.txt
+
+STOPWORDS
+http://linguateca.di.uminho.pt/Paulo/stopwords/
+
+NAMED ENTITIES
+http://acdc.linguateca.pt/acesso/ordenador.html

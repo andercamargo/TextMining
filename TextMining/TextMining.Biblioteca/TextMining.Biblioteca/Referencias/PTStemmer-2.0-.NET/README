@@ -1,0 +1,66 @@
+PTStemmer - A Stemming toolkit for the Portuguese language
+http://code.google.com/p/ptstemmer
+
+FEATURES
+- Java, Python, and .NET C# implementations of Orengo, Porter, and Savoy stemmers
+- Fast: can stem more than 500k words/second on a normal desktop
+- Least Recently Used stem cache
+- Support for lists of words to ignore (useful for stopword and named entity removal)
+
+
+MINIMUM REQUIREMENTS
+Java
+	- Java 1.5
+Python
+	- Python 2.5
+.NET
+	- .NET Framework 2.0 or Mono 2.0
+
+USAGE
+Java
+	Simple
+		Stemmer stemmer = new OrengoStemmer();
+		System.out.println(stemmer.getWordStem("extremamente"));
+
+	Complete
+		Stemmer stemmer = Stemmer.StemmerFactory(StemmerType.ORENGO);
+		stemmer.enableCaching(1000);
+		stemmer.ignore(PTStemmerUtilities.fileToSet("data/stopwords.txt"));
+		stemmer.ignore(PTStemmerUtilities.fileToSet("data/namedEntities.txt"));         
+		String stem = stemmer.getWordStem("ciências");          
+		System.out.println(PTStemmerUtilities.removeDiacritics(stem));
+
+C#
+	Simple
+		Stemmer stemmer = new OrengoStemmer();
+		Console.WriteLine(stemmer.getWordStem("extremamente"));
+
+	Complete
+		Stemmer stemmer = Stemmer.StemmerFactory(Stemmer.StemmerType.ORENGO);
+		stemmer.enableCaching(1000);
+		stemmer.ignore(PTStemmerUtilities.fileToList("data/stopwords.txt"));
+		stemmer.ignore(PTStemmerUtilities.fileToList("data/namedEntities.txt"));                
+		string stem = stemmer.getWordStem("ciências");          
+		Console.WriteLine(PTStemmerUtilities.removeDiacritics(stem));
+
+Python
+	Simple
+		stemmer = OrengoStemmer()
+		print stemmer.getWordStem("extremamente")
+
+	Complete
+		stemmer = OrengoStemmer() #or PorterStemmer() or SavoyStemmer()
+		stemmer.enableCaching(1000)
+		stemmer.ignore(PTStemmerUtilities.fileToSet("data/stopwords.txt"))
+		stemmer.ignore(PTStemmerUtilities.fileToSet("data/namedEntities.txt"))          
+		stem = stemmer.getWordStem("ciências")
+		print PTStemmerUtilities.removeDiacritics(stem)
+	
+
+TODO
+- Add more programming languages (PHP, Ruby)
+- Implement a portuguese language specific tokenizer
+
+COMMENTS & SUGGESTIONS
+- Pedro Oliveira
+	http://www.cpdomina.net
